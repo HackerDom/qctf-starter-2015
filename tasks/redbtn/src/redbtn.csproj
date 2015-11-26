@@ -81,11 +81,6 @@
   <ItemGroup>
     <Content Include="Main.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="static\fonts\RobotoMono-Bold.woff" />
-    <Content Include="static\fonts\RobotoMono-Regular.woff" />
-    <Content Include="static\fonts\RobotoMono-Thin.woff" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
