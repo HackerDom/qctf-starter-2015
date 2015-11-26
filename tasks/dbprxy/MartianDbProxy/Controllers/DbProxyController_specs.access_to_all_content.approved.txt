@@ -1,0 +1,4 @@
+﻿responseNextChallenge[0] = AAF893E1D631430799F7F0FF27308162
+responseNextChallenge[1] = 2DD4F4C12C3A43BDA3AD5F707725DA74
+responseNextChallenge[2] = BC7017B8A3E4466D98B80F762D47CB15
+responseNextChallenge[3] = 

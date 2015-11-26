@@ -1,0 +1,16 @@
+﻿response[0] = ErrorMessage: 
+NextSecurityLevelChallenge: AAF893E1D631430799F7F0FF27308162
+Content:
+proove you are not slave to get access
+response[1] = ErrorMessage: 
+NextSecurityLevelChallenge: 2DD4F4C12C3A43BDA3AD5F707725DA74
+Content:
+FLAG1
+response[2] = ErrorMessage: 
+NextSecurityLevelChallenge: BC7017B8A3E4466D98B80F762D47CB15
+Content:
+FLAG2
+response[3] = ErrorMessage: 
+NextSecurityLevelChallenge: BC7017B8A3E4466D98B80F762D47CB15
+Content:
+FLAG2

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianDbHacking", "MartianDbHacking\MartianDbHacking.csproj", "{A14D1C34-6B26-4CCD-B835-39648FB7B06B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MartianDbProxy", "MartianDbProxy\MartianDbProxy.csproj", "{1A73A275-DBF9-47A5-8055-B77FB22409E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Language", "Language\Language.csproj", "{43C0F220-56BF-4FE5-B7C4-E58AE08545BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcrTask", "OcrTask\OcrTask.csproj", "{CCEA3D40-D2C4-4841-AE6F-1A5B78C494A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A14D1C34-6B26-4CCD-B835-39648FB7B06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A14D1C34-6B26-4CCD-B835-39648FB7B06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A14D1C34-6B26-4CCD-B835-39648FB7B06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A14D1C34-6B26-4CCD-B835-39648FB7B06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A73A275-DBF9-47A5-8055-B77FB22409E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A73A275-DBF9-47A5-8055-B77FB22409E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A73A275-DBF9-47A5-8055-B77FB22409E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A73A275-DBF9-47A5-8055-B77FB22409E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C0F220-56BF-4FE5-B7C4-E58AE08545BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C0F220-56BF-4FE5-B7C4-E58AE08545BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C0F220-56BF-4FE5-B7C4-E58AE08545BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C0F220-56BF-4FE5-B7C4-E58AE08545BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEA3D40-D2C4-4841-AE6F-1A5B78C494A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEA3D40-D2C4-4841-AE6F-1A5B78C494A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEA3D40-D2C4-4841-AE6F-1A5B78C494A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEA3D40-D2C4-4841-AE6F-1A5B78C494A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
