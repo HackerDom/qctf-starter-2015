@@ -21,9 +21,13 @@ namespace TaskMorse
 					Console.WriteLine("prog.exe <port> <path>");
 					return;
 				}
-
+    			string suffix = null;
+                if (args.Length == 1)
+                {
+                    suffix = args[1];
+                }    			
 				EncFlag = Morse.Encode(Flag).Select(val => Encoding.ASCII.GetBytes(val.ToString().ToLower())).ToArray();
-				new AsyncListener(int.Parse(args[0]), args[1], ProcessSearchRequest).Loop();
+				new AsyncListener(int.Parse(args[0]), suffix, ProcessSearchRequest).Loop();
 
 				Thread.Sleep(Timeout.Infinite);
 			}
