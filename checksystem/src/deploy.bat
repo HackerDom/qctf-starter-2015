@@ -8,9 +8,6 @@ md %depl%
 rd /s /q %site%\
 rd /s /q %sitetmp%\
 
-xcopy /y /e %1static %sttc%\
-dir /b /a:-d /s %sttc% | grep -vE "\.png|\.gif|\.jpg|\.js|\.css|\.ico|\.html|\.woff" | xargs -n1 rm -fv
-
 xcopy /d /y %1*.as?x %sitetmp%\
 xcopy /d /y %1*.master %sitetmp%\
 xcopy /d /y %1*.htm %sitetmp%\
@@ -34,5 +31,8 @@ echo Merge precompiled assemblies
 "%ProgramFiles(x86)%\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\aspnet_merge.exe" %site% -o MainUI -a -r
 
 rd /s /q %sitetmp%\
+
+xcopy /y /e %1static %sttc%\
+dir /b /a:-d /s %sttc% | grep -vE "\.png|\.gif|\.jpg|\.js|\.css|\.ico|\.html|\.woff" | xargs -n1 rm -fv
 
 echo OK
