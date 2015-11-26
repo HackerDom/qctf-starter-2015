@@ -24,7 +24,7 @@ function fixIEHeight($div) {
 }
 
 function htmlEncode(value) {
-	return $('<div/>').text(value).html();
+	return $('<div/>').text(value).html().replace('"', '&quot;').replace("'", '&apos;');
 }
 
 var gtimer;
