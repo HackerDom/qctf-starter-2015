@@ -4,6 +4,7 @@ create table [dbo].[users]
 (
 	[login] [nvarchar](64) not null,
 	[pass] [nvarchar](64) not null,
+    [area] [nvarchar](64) null,
 	[avatar] [nvarchar](256) null,
 	[startat] [datetime2](7) null,
 	[endat] [datetime2](7) null
