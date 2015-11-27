@@ -43,6 +43,9 @@ namespace main.auth
 				user = DbStorage.FindUserByPass(pass);
 				if(user == null)
 					throw new HttpException(403, "Access denied");
+
+				if(user.StartTime < DateTime.UtcNow)
+					throw new HttpException(403, $"Start at '{user.StartTime.ToReadable()}'");
 			}
 
 			AuthModule.SetAuthLoginCookie(user.Login.Trim());

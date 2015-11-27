@@ -4,7 +4,8 @@ create table [dbo].[users]
 (
 	[login] [nvarchar](64) not null,
 	[pass] [nvarchar](64) not null,
-	[avatar] [nvarchar](256) null
+	[avatar] [nvarchar](256) null,
+	[startat] [datetime2](7) null
 )
 
 create unique nonclustered index [ix_pass] on [dbo].[users] 

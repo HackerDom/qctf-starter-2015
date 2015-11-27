@@ -82,5 +82,10 @@ namespace main.db
 		{
 			return reader.IsDBNull(idx) ? 0 : reader.GetInt32(idx);
 		}
+
+		public static DateTime TryGetDateTime(this DbDataReader reader, int idx)
+		{
+			return reader.IsDBNull(idx) ? DateTime.MinValue : reader.GetDateTime(idx);
+		}
 	}
 }

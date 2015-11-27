@@ -25,7 +25,7 @@ namespace main.db
 
 		public static User FindUserByPass(string pass)
 		{
-			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand("select [login], [pass], [avatar] from users where pass = @pass",
+			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand("select [login], [pass], [avatar], [startat] from users where pass = @pass",
 				cmd =>
 				{
 					cmd.AddParam("pass", pass, DbType.String);
@@ -36,7 +36,8 @@ namespace main.db
 					{
 						Login = reader.GetString(0),
 						Pass = reader.GetString(1),
-						Avatar = reader.TryGetString(2)
+						Avatar = reader.TryGetString(2),
+						StartTime = reader.TryGetDateTime(3)
 					};
 					Log.DebugFormat("Found user '{0}'", user.Login);
 					return user;

@@ -24,5 +24,10 @@ namespace main.utils
 		{
 			return DateTime.ParseExact(value, "s", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 		}
+
+		public static string ToReadable(this DateTime dt)
+		{
+			return dt.ToString("yyyy-MM-dd HH:mm:ss zz");
+		}
 	}
 }
