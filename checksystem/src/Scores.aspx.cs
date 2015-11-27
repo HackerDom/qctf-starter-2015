@@ -16,7 +16,8 @@ namespace main
 
 			var scores = DbStorage.FindScores();
 			Array.ForEach(scores, score => score.Value = (double)score.Stars / ElCapitan.FlagsCount);
-			ScoresList.DataSource = scores;
+
+			ScoresList.DataSource = scores.Where(score => !score.Name.StartsWith("observer_", StringComparison.InvariantCultureIgnoreCase));
 			ScoresList.DataBind();
 		}
 

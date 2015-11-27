@@ -120,7 +120,7 @@ $(function() {
 	}
 
 	function highlight($div) {
-		$div.css({ "background-color": "rgba(255, 100, 100, 0.25)" }).delay(3000).animate({ backgroundColor: "transparent" }, 1000);
+		$div.css({ "background-color": "rgba(100, 255, 100, 0.25)" }).delay(3000).animate({ backgroundColor: "transparent" }, 1000);
 	}
 
 	function addScore() {

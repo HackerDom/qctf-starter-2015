@@ -8,7 +8,7 @@
 	<div class="scores-title">Прогресс</div>
 	<asp:Repeater runat="server" ID="ScoresList" ItemType="main.Score">
 		<HeaderTemplate><table class="scores-tbl"><colgroup><col class="scores-imgcol"/><col class="scores-namecol"/><col class="scores-starscol"/><col class="scores-prcentcol"/></colgroup><tbody></HeaderTemplate>
-		<ItemTemplate><tr style="<%#:Item.Name.ToLower().StartsWith("test_") ? "display:none" : null%>"><td class="scores-img" style="background-image:url(/static/img/avatars/<%#:Item.Avatar ?? "default.gif"%>)"></td><td class="scores-name"><%#:Item.Name%></td><td><%#:GetStars(Item.Stars)%></td><td class="scores-prcent"><%#:Item.Value.ToString("P0")%></td></tr></ItemTemplate>
+		<ItemTemplate><tr><td class="scores-img" style="background-image:url(/static/img/avatars/<%#:Item.Avatar ?? "default.gif"%>)"></td><td class="scores-name"><%#:Item.Name%></td><td><%#:GetStars(Item.Stars)%></td><td class="scores-prcent"><%#:Item.Value.ToString("P0")%></td></tr></ItemTemplate>
 		<FooterTemplate></tbody></table></FooterTemplate>
 	</asp:Repeater>
 	</div></div>
