@@ -8,5 +8,6 @@ namespace main.db
 		public string Pass;
 		public string Avatar;
 		public DateTime StartTime;
+		public DateTime EndTime;
 	}
 }

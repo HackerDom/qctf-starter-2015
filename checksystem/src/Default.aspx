@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="false" CodeBehind="Default.aspx.cs" Inherits="main.Default" MasterPageFile="Main.Master" %>
-<%@ Import Namespace="main" %>
 <%@ Import Namespace="main.utils" %>
 <%@ Register TagPrefix="web" Src="chat/Chat.ascx" TagName="Chat" %>
 <%@ Register TagPrefix="web" Src="files/Explorer.ascx" TagName="Explorer" %>
@@ -27,5 +26,5 @@
 	</tr>
 	<tr><td class="main-tbl-cell main-img <%:HasBombTimer ? "main-img_erth" : null%>"></td></tr>
 </table>
-<asp:PlaceHolder runat="server" ID="StartBombTimer" Visible="False"><script>setTimer("<%:new HtmlString(Settings.BombTimerEnd.ToJsDate())%>");</script></asp:PlaceHolder>
+<asp:PlaceHolder runat="server" ID="StartBombTimer" Visible="False"><script>setTimer("<%:new HtmlString(EndTime.ToJsDate())%>");</script></asp:PlaceHolder>
 </asp:Content>
