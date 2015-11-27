@@ -36,6 +36,13 @@ namespace main
 
 			var flags = DbStorage.FindFlags(Login);
 			HasBombTimer = ElCapitan.HasBombTimer(flags);
+
+			var user = DbStorage.FindUserByLogin(Login);
+			if(user == null)
+				throw new HttpException(403, "Access denied");
+
+			EndTime = user.EndTime != DateTime.MinValue ? user.EndTime : Settings.BombTimerEnd;
+
 			StartBombTimer.Visible = HasBombTimer;
 		}
 
@@ -49,5 +56,6 @@ namespace main
 		protected int Stars;
 
 		protected bool HasBombTimer;
+		protected DateTime EndTime;
 	}
 }

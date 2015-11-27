@@ -44,8 +44,13 @@ namespace main.auth
 				if(user == null)
 					throw new HttpException(403, "Access denied");
 
-				if(user.StartTime < DateTime.UtcNow)
+				var utcNow = DateTime.UtcNow;
+
+				if(user.StartTime > utcNow)
 					throw new HttpException(403, $"Start at '{user.StartTime.ToReadable()}'");
+
+				if(user.EndTime != DateTime.MinValue && user.EndTime < utcNow)
+					throw new HttpException(403, "The End");
 			}
 
 			AuthModule.SetAuthLoginCookie(user.Login.Trim());

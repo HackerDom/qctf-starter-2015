@@ -14,7 +14,14 @@ namespace main.chat
 			var flags = DbStorage.FindFlags(login);
 
 			if(ElCapitan.GameEnded(flags))
-				throw new HttpException(403, "Connection lost...");
+				throw new HttpException(403, "The End");
+
+			var user = DbStorage.FindUserByLogin(login);
+			if(user == null)
+				throw new HttpException(403, "Access denied");
+
+			if(user.EndTime != DateTime.MinValue && user.EndTime < DateTime.UtcNow)
+				throw new HttpException(403, "The End");
 
 			var question = context.Request.Form["question"].TrimToNull();
 			if(question == null)

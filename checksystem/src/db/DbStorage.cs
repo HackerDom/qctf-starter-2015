@@ -23,12 +23,22 @@ namespace main.db
 				}));
 		}
 
+		public static User FindUserByLogin(string login)
+		{
+			return FindUser("login", login);
+		}
+
 		public static User FindUserByPass(string pass)
 		{
-			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand("select [login], [pass], [avatar], [startat] from users where pass = @pass",
+			return FindUser("pass", pass);
+		}
+
+		public static User FindUser(string key, string value)
+		{
+			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand($"select [login], [pass], [avatar], [startat], [endat] from users where {key} = @val",
 				cmd =>
 				{
-					cmd.AddParam("pass", pass, DbType.String);
+					cmd.AddParam("val", value, DbType.String);
 					var reader = cmd.ExecuteReader();
 					if(reader.IsClosed || !reader.Read())
 						return null;
@@ -37,7 +47,8 @@ namespace main.db
 						Login = reader.GetString(0),
 						Pass = reader.GetString(1),
 						Avatar = reader.TryGetString(2),
-						StartTime = reader.TryGetDateTime(3)
+						StartTime = reader.TryGetDateTime(3),
+						EndTime = reader.TryGetDateTime(4)
 					};
 					Log.DebugFormat("Found user '{0}'", user.Login);
 					return user;
