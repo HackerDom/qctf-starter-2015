@@ -15,10 +15,14 @@ namespace main.chat
 			/*if(DateTime.UtcNow > Settings.BombTimerEnd)
 				throw new HttpException(403, "Connection lost...");*/
 
+			var user = DbStorage.FindUserByLogin(login);
+			if(user == null)
+				throw new HttpException(403, "Access denied");
+
 			var revision = DbStorage.FindBroadcast(login);
 			var flags = DbStorage.FindFlags(login);
 
-			var timer = ElCapitan.HasBombTimer(flags) ? Settings.BombTimerEnd : DateTime.MinValue;
+			var timer = ElCapitan.HasBombTimer(flags) ? (user.EndTime != DateTime.MinValue ? user.EndTime : Settings.BombTimerEnd) : DateTime.MinValue;
 
 			var answers = ElCapitan.GetBroadcastMsgs(ref revision);
 			if(answers.Length == 0)
