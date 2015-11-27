@@ -474,6 +474,10 @@ input[type="button"], input[type="submit"] {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+.scores-area {
+	font-size: 11px;
+	color: #3b8790;
+}
 .scores-prcent {
 	color: #3B8790;
 	background-color: transparent !important;
