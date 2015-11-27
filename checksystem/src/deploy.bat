@@ -33,6 +33,7 @@ echo Merge precompiled assemblies
 rd /s /q %sitetmp%\
 
 xcopy /y /e %1static %sttc%\
+xcopy /d /s %1..\settings %depl%\settings\
 dir /b /a:-d /s %sttc% | grep -vE "\.png|\.gif|\.jpg|\.js|\.css|\.ico|\.html|\.woff" | xargs -n1 rm -fv
 
 echo OK
