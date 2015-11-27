@@ -2,7 +2,7 @@
 Mars0_RedPlanet					[{"name":"backup","ext":".zip","url":"/download/1b1baa8dbc68603a/backup.zip"},{"name":"QR","ext":".png","url":"/download/x9d0a19235bc93f3/QR.png"}]
 
 #2 Координаты, бомба детектед -> фотки с камер + hiberfil.sys
-mars0_VYEoaRTSvyjqb89			[{"name":"ext_cam","ext":".jpg","url":"/download/22406c686a271415/ext_cam.jpg"},{"name":"int_cam","ext":".zip","url":"/download/22406c686a271415/int_cam.zip"},{"name":"hiberfil.sys","ext":".zip","url":"/download/22406c686a271415/hiberfil.sys.zip"}]
+mars0_VYEoaRTSvyjqb89			[{"name":"extcam","ext":".jpg","url":"/download/22406c686a271415/extcam.jpg"},{"name":"intcam","ext":".zip","url":"/download/22406c686a271415/intcam.zip"},{"name":"hiberfil.sys","ext":".zip","url":"/download/22406c686a271415/hiberfil.sys.zip"}]
 
 # Марсианский текст на артефакте
 Mars0_Database4687976317806149	[{"name":"martians_db_proxy","ext":".lnk","url":"http://127.0.0.1:15002/dbproxy"}]
