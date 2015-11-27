@@ -18,7 +18,7 @@ pushd ..\checksystem\download\1b1baa8dbc68603a
 %~dp0tools\zip backup.zip *.txt
 popd
 
-echo "Copying to site..."
+echo "Copying add downloads to site..."
 for /d %%d in (*) do (
 	xcopy /y /s %%d\deploy\* ..\checksystem\src\deploy\site\download\
 )
