@@ -28,7 +28,7 @@ namespace BrainFuckTask
 					ExpectedMatricesToText.Add(Tuple.Create(GetMatrixFromString(lines.Take(10).ToList()), string.Join("\r\n", lines.Skip(10))));
 				}
 
-				new AsyncListener(int.Parse(args[0]), args[1], Interpretate).Loop(); //"q5391Lan"
+				new AsyncListener("brainfuck.contest.qctf.ru", int.Parse(args[0]), Interpretate).Loop(); //"q5391Lan"
 
 				Thread.Sleep(-1);
 			}

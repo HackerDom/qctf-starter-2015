@@ -8,16 +8,24 @@ namespace TaskMorse
 {
 	public class AsyncListener
 	{
-		public AsyncListener(int port, string suffix, Func<HttpListenerContext, Task> callback)
+		public AsyncListener(string host, int port, Func<HttpListenerContext, Task> callback)
 		{
 			this.callback = callback;
 			listener = new HttpListener();
-			listener.Prefixes.Add($"http://+:{port}/{(suffix != null ? suffix.Trim('/') + '/' : null)}");
+			listener.Prefixes.Add($"http://{host}:{port}/");
 		}
 
 		public async void Loop()
 		{
-			listener.Start();
+			Log.InfoFormat("Try to listen '{0}'", string.Join(";", listener.Prefixes));
+			try
+			{
+				listener.Start();
+			}
+			catch (Exception e)
+			{
+				Log.ErrorFormat("Listen failed: {0}", e);
+			}
 			Log.InfoFormat("Listen '{0}'", string.Join(";", listener.Prefixes));
 			while(true)
 			{

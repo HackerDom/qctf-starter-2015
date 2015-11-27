@@ -8,16 +8,24 @@ namespace BrainFuckTask
 {
 	public class AsyncListener
 	{
-		public AsyncListener(int port, string suffix, Func<HttpListenerContext, Task> callback)
+		public AsyncListener(string hostname, int port, Func<HttpListenerContext, Task> callback)
 		{
 			this.callback = callback;
 			listener = new HttpListener();
-			listener.Prefixes.Add($"http://+:{port}/{(suffix != null ? suffix.Trim('/') + '/' : null)}");
+			listener.Prefixes.Add($"http://{hostname}:{port}/");
 		}
 
 		public async void Loop()
 		{
-			listener.Start();
+			Log.InfoFormat("Listen '{0}'", string.Join(";", listener.Prefixes));
+			try 
+			{
+				listener.Start();
+			}
+			catch (Exception e)
+			{
+				Log.InfoFormat("{0}", e);
+			}
 			Log.InfoFormat("Listen '{0}'", string.Join(";", listener.Prefixes));
 			while(true)
 			{
