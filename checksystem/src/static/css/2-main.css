@@ -479,6 +479,12 @@ input[type="button"], input[type="submit"] {
 	background-repeat: no-repeat !important;
 	background-size: 60px 60px !important;
 }
+.scores-place {
+	position: absolute;
+	right: 91%;
+	margin-top: -10px;
+	color: #3b8790;
+}
 .scores-name {
 	font-size: 18px;
 	padding-left: 20px;
