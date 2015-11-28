@@ -211,7 +211,7 @@ namespace main.db
 					new Score
 					{
 						Name = reader.GetString(0),
-						Area = reader.GetString(1),
+						Area = reader.TryGetString(1),
 						Avatar = reader.TryGetString(2),
 						Stars = reader.TryGetInt32(3)
 					};
