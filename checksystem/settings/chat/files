@@ -1,5 +1,5 @@
 #1 Первый флаг -> ZIP
-Mars0_RedPlanet					[{"name":"backup","ext":".zip","url":"/download/1b1baa8dbc68603a/backup.zip"},{"name":"QR","ext":".png","url":"/download/x9d0a19235bc93f3/QR.png"}]
+Mars0_RedPlanet					[{"name":"backup","ext":".zip","url":"/download/1b1baa8dbc68603a/backup.zip"},{"name":"QR","ext":".jpg","url":"/download/x9d0a19235bc93f3/QR.jpg"}]
 
 #2 Координаты, бомба детектед -> фотки с камер + hiberfil.sys
 mars0_VYEoaRTSvyjqb89			[{"name":"extcam","ext":".jpg","url":"/download/22406c686a271415/extcam.jpg"},{"name":"intcam","ext":".zip","url":"/download/22406c686a271415/intcam.7z"},{"name":"hiberfil.sys","ext":".zip","url":"/download/22406c686a271415/hiberfil.sys.zip"}]

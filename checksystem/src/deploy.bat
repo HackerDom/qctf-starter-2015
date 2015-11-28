@@ -3,10 +3,8 @@ set site=%1deploy\site
 set sitetmp=%1deploy\site.tmp
 set sttc=%site%\static
 
+rd /s /q %depl%
 md %depl%
-
-rd /s /q %site%\
-rd /s /q %sitetmp%\
 
 xcopy /d /y %1*.as?x %sitetmp%\
 xcopy /d /y %1*.master %sitetmp%\
@@ -33,7 +31,7 @@ echo Merge precompiled assemblies
 rd /s /q %sitetmp%\
 
 xcopy /y /e %1static %sttc%\
-xcopy /d /s %1..\settings %depl%\settings\
+xcopy /y /d /s %1..\settings %depl%\settings\
 dir /b /a:-d /s %sttc% | grep -vE "\.png|\.gif|\.jpg|\.js|\.css|\.ico|\.html|\.woff" | xargs -n1 rm -fv
 
 echo OK
