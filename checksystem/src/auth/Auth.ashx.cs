@@ -16,6 +16,8 @@ namespace main.auth
 			User user;
 			if(context.Request.QueryString["signup"] != null)
 			{
+				throw new HttpException(403, "Registration is disabled");
+
 				var login = context.Request.Form["login"].TrimToNull();
 				if(login == null)
 					throw new HttpException(400, "Login is empty");
