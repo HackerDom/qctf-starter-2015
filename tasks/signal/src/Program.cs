@@ -35,7 +35,7 @@ namespace TaskMorse
 
 		private static async Task ProcessSearchRequest(HttpListenerContext context)
 		{
-			var result = EncFlag[(GetTotalMilliseconds() / 250L) % EncFlag.Length];
+			var result = EncFlag[(GetTotalMilliseconds() / 500L) % EncFlag.Length];
 			context.Response.ContentLength64 = result.Length;
 			await context.Response.OutputStream.WriteAsync(result, 0, result.Length);
 		}
