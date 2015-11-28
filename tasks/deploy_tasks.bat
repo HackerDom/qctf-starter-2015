@@ -7,8 +7,8 @@ for /d %%d in (*) do (
 	echo BUILDING %%d	
         pushd %%d
         call prebuild.bat
-        for %%p in (src\*.csproj) do msbuild %%p
-        for %%s in (*.sln) do msbuild %%s
+        for %%p in (src\*.csproj) do msbuild %%p /p:Configuration=Release
+        for %%s in (*.sln) do msbuild %%s /p:Configuration=Release
         popd
     )
 )
