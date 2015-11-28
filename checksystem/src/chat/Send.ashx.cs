@@ -39,7 +39,7 @@ namespace main.chat
 
 			DbStorage.AddDialog(login, new Msg {Text = question, Time = DateTime.UtcNow, Type = MsgType.Question}, new[] {msg}, flag, files);
 
-			return new AjaxResult {Messages = new[] {msg}, Files = files, Score = flag != null ? 1 : 0, Timer = timer};
+			return new AjaxResult {Messages = new[] {msg}, Files = files, Score = flag != null ? 1 : 0, Timer = timer == DateTime.MinValue ? DateTime.MinValue : (user.EndTime != DateTime.MinValue ? user.EndTime : timer)};
 		}
 	}
 }

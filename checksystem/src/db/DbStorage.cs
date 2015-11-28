@@ -70,7 +70,7 @@ namespace main.db
 
 		public static Score[] FindScores(string login = null)
 		{
-			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand(string.Format("select tmp1.[login], tmp1.[avatar], tmp2.[count] from (select [login], [avatar] from users {0}) tmp1 left join (select [login], count(1) as [count], max([dt]) as [last] from flags group by [login]) tmp2 on tmp1.[login] = tmp2.[login] order by tmp2.[count] desc, tmp2.[last] asc", login == null ? null : "where login = @login"),
+			return Settings.ConnectionString.UsingConnection(conn => conn.UsingCommand(string.Format("select tmp1.[login], tmp1.[area], tmp1.[avatar], tmp2.[count] from (select [login], [area], [avatar] from users {0}) tmp1 left join (select [login], count(1) as [count], max([dt]) as [last] from flags group by [login]) tmp2 on tmp1.[login] = tmp2.[login] order by tmp2.[count] desc, tmp2.[last] asc", login == null ? null : "where login = @login"),
 				cmd =>
 				{
 					if(login != null)
@@ -211,8 +211,9 @@ namespace main.db
 					new Score
 					{
 						Name = reader.GetString(0),
-						Avatar = reader.TryGetString(1),
-						Stars = reader.TryGetInt32(2)
+						Area = reader.GetString(1),
+						Avatar = reader.TryGetString(2),
+						Stars = reader.TryGetInt32(3)
 					};
 			}
 		}

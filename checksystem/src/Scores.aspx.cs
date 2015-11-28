@@ -31,6 +31,7 @@ namespace main
 	{
 		public string Avatar;
 		public string Name;
+		public string Area;
 		public int Stars;
 		public double Value;
 	}
