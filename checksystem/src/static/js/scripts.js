@@ -193,12 +193,14 @@ $(function() {
 		}
 	}
 
-	setInterval(function() {
-		$.ajax({
-			url: "/check",
-			type: "POST"
-		}).done(update);
-	}, 60000);
+	if(window.location.pathname === "/") {
+		setInterval(function() {
+			$.ajax({
+				url: "/check",
+				type: "POST"
+			}).done(update);
+		}, 60000);
+	}
 
 	$("#js-chat").submit(function(event) {
 		event.preventDefault();
