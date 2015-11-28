@@ -11,6 +11,9 @@ namespace main.chat
 		protected override AjaxResult ProcessRequestInternal(HttpContext context)
 		{
 			var login = AuthModule.GetAuthLogin();
+
+			AntiFlood.CheckFlood($"{context.Request.CurrentExecutionFilePath}:{login}");
+
 			var flags = DbStorage.FindFlags(login);
 
 			if(ElCapitan.GameEnded(flags))

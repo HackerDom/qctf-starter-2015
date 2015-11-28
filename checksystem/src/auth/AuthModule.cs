@@ -25,7 +25,7 @@ namespace main.auth
 				return;
 
 			var tokenCookie = context.Request.Cookies[TokenParamName];
-			var token = tokenCookie == null ? null : tokenCookie.Value;
+			var token = tokenCookie?.Value;
 
 			string login = null;
 			if(token != null)
@@ -39,7 +39,8 @@ namespace main.auth
 
 			Log.InfoFormat("{0,-4} '{1}', form '{2}', ua '{3}'", context.Request.HttpMethod.SafeToLog(), context.Request.Unvalidated.RawUrl.SafeToLog(), context.Request.Unvalidated.Form.ToString().SafeToLog(), context.Request.UserAgent.SafeToLog());
 
-			AntiFlood.CheckFlood(string.Format("{0}:{1}", context.Request.CurrentExecutionFilePath, login ?? context.Request.UserHostAddress));
+			if(context.CurrentHandler is System.Web.UI.Page)
+				AntiFlood.CheckFlood($"{context.Request.CurrentExecutionFilePath}:{login ?? context.Request.UserHostAddress}", login != null ? 10 : 50);
 		}
 
 		public static void SetAuthLoginCookie(string login)

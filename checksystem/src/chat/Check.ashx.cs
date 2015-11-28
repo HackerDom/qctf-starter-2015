@@ -12,6 +12,8 @@ namespace main.chat
 		{
 			var login = AuthModule.GetAuthLogin();
 
+			AntiFlood.CheckFlood($"{context.Request.CurrentExecutionFilePath}:{login}");
+
 			/*if(DateTime.UtcNow > Settings.BombTimerEnd)
 				throw new HttpException(403, "Connection lost...");*/
 

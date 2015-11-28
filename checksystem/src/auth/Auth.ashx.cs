@@ -13,6 +13,8 @@ namespace main.auth
 	{
 		protected override AjaxResult ProcessRequestInternal(HttpContext context)
 		{
+			AntiFlood.CheckFlood($"{context.Request.CurrentExecutionFilePath}:{context.Request.UserHostAddress}", 50);
+
 			User user;
 			if(context.Request.QueryString["signup"] != null)
 			{
