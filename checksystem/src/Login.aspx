@@ -9,7 +9,7 @@
 			<div class="login-note">введите код доступа</div>
 			<div class="login-pass-wrap">
 				<div id="js-auth-fail" class="lbl lbl-err chat-lbl-err js-err"></div>
-				<input type="password" name="pass" class="login-pass" autofocus required maxlength="10"/>
+				<input type="password" name="pass" class="login-pass" autofocus required maxlength="12"/>
 			</div>
 		</form>
 		<div class="login-warn">СЕКРЕТНЫЙ УРОВЕНЬ ДОСТУПА</div>
